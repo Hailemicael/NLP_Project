@@ -72,3 +72,34 @@ for text, prediction in zip(new_data_extended, new_predictions_extended):
 ```
 
 
+## Files
+
+1. **Dataset:** `medical_non_medical_dataset.csv`
+   - This CSV file contains the cleaned and preprocessed dataset used for training and testing the models.
+
+2. **Training Code:** `NLP_Assignment_1.ipynb`/ `nlp_assignment_1.py`
+   - The Python script `NLP_Assignment_1.ipynb`/ `nlp_assignment_1.py` includes the code for fetching content from Wikipedia, cleaning the text data, and training the classification models using scikit-learn.
+
+## Usage
+- The `NLP_Assignment_1.ipynb` file works directly on Colab without the need for additional uploads. By default, it creates the dataset, facilitates easy training, and allows for result visualization.
+- To use `nlp_assignment_1.py`, ensure that the required dependencies are installed first. You can do this by running:
+
+### Requirements
+
+- Python 3.10.12
+
+### Dependencies
+
+Make sure you have the following Python libraries installed:
+
+- [pandas](https://pandas.pydata.org/): `pip install pandas`
+- [Wikipedia-API](https://pypi.org/project/Wikipedia-API/): `pip install Wikipedia-API`
+- [beautifulsoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/): `pip install beautifulsoup4`
+- [nltk](https://www.nltk.org/): `pip install nltk`
+- [scikit-learn](https://scikit-learn.org/stable/): `pip install scikit-learn`
+
+These libraries are required to run the Python scripts and notebooks in this project.
+
+
+
+
