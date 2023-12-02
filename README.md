@@ -100,6 +100,7 @@ Make sure you have the following Python libraries installed:
 
 These libraries are required to run the Python scripts and notebooks in this project.
 
-
+# Update
+NLP_Assignment_1_updated_version, this updated version is with the addition of a validation set to evaluate overfitting, underfitting, and misclassification for naive_bayes
 
 
