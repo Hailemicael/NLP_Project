@@ -77,8 +77,8 @@ for text, prediction in zip(new_data_extended, new_predictions_extended):
 1. **Dataset:** `medical_non_medical_dataset.csv`
    - This CSV file contains the cleaned and preprocessed dataset used for training and testing the models.
 
-2. **Training Code:** `NLP_Assignment_1.ipynb`/ `nlp_assignment_1.py`
-   - The Python script `NLP_Assignment_1.ipynb`/ `nlp_assignment_1.py` includes the code for fetching content from Wikipedia, cleaning the text data, and training the classification models using scikit-learn.
+2. **Training Code:** `nlp_assignment_1.ipynb`/ `nlp_assignment_1.py`
+   - The Python script `nlp_assignment_1.ipynb`/ `nlp_assignment_1.py` includes the code for fetching content from Wikipedia, cleaning the text data, and training the classification models using scikit-learn.
 
 ## Usage
 - The `NLP_Assignment_1.ipynb` file works directly on Colab without the need for additional uploads. By default, it creates the dataset, facilitates easy training, and allows for result visualization.
