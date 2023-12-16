@@ -40,8 +40,14 @@ model = LogisticRegression(random_state=100)
 model.fit(X_train_resampled, y_train_resampled)
 ```
 ## Model Evaluation and Predictions
+###Data Splitting 
 The trained models are evaluated using test data, and accuracy scores and classification reports are generated.
-
+```python
+# Example Code for data splitting 
+X_train, X_temp, y_train, y_temp = train_test_split(df['text'], df['label'], test_size=0.3, random_state=100)
+# Further split X_temp and y_temp into training and validation sets
+X_train, X_val, y_train, y_val = train_test_split(X_temp, y_temp, test_size=0.4, random_state=100)
+```
 ### Naive Bayes Model Evaluation
 ```python
 # Example Code for Naive Bayes Model Evaluation
@@ -57,6 +63,30 @@ predictions = model.predict(X_test_tfidf)
 accuracy = accuracy_score(y_test, predictions)
 print(f"\nAccuracy: {accuracy}")
 print("Classification Report:\n", classification_report(y_test, predictions))
+```
+
+### Analyze Misclassifications on the Validation Set
+Evaluates the model on the validation set, including misclassification analysis.
+```python
+misclassified_indices = [i for i, (true_label, pred_label) in enumerate(zip(y_val, val_predictions)) if true_label != pred_label]
+misclassified_examples = X_val.iloc[misclassified_indices].tolist()
+true_labels = y_val.iloc[misclassified_indices].tolist()
+pred_labels = val_predictions[misclassified_indices]
+```
+### Learning Curve for both models
+Generates a learning curve to assess overfitting/underfitting.
+```python
+example code for plotting the learning curve
+plt.figure(figsize=(10, 6))
+plt.plot(train_sizes, np.mean(train_scores, axis=1), label='Training Score')
+plt.plot(train_sizes, np.mean(test_scores, axis=1), label='Cross-Validation Score')
+```
+### Model evaluation in the test set
+Evaluates the model on the test set.
+```python
+X_temp_resampled, y_temp_resampled = sampler.fit_resample(X_temp_tfidf, y_temp)
+test_predictions = nb_model.predict(X_temp_resampled)
+test_accuracy = accuracy_score(y_temp_resampled, test_predictions)
 ```
 ## Predictions on New Data
 Predictions are made on new data using both Naive Bayes and Logistic Regression models.
